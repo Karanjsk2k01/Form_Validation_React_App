@@ -1,28 +1,32 @@
-import React from 'react'
-import { ReactPortal } from 'react'
-import './popup.css'
-const Popup = (props) => {
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './popup.css';
 
-  const overlay = (props) => {
-    <div className='modal'>
-      <header className='header'>
-        <h2>{props.title}</h2>
-      </header>
-      <div className='content'>
-        <p>{props.message}</p>
-      </div>
-      <footer className='actions'>
-        <button>
-          Okay
-        </button>
-      </footer>
+const Overlay = (props) => (
+  <div className='modal'>
+    <header className='header'>
+      <h2>{props.title}</h2>
+    </header>
+    <div className='content'>
+      <p>{props.message}</p>
     </div>
-  }
+    <footer className='actions'>
+      <button>
+        Okay
+      </button>
+    </footer>
+  </div>
+);
 
-
+const Popup = (props) => {
   return (
-    ReactDOM.createPortal(<overlay title={props.title} message={props.message} />)
-  )
-}
+    <>
+      {ReactDOM.createPortal(
+        <Overlay title={props.title} message={props.message} />,
+        document.getElementById('backdrop')
+      )}
+    </>
+  );
+};
 
-export default Popup
+export default Popup;

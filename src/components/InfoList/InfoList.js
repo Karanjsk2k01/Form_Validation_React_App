@@ -10,6 +10,9 @@ const InfoList = (props) => {
       <div className='info-item__age'>
         {props.age}
       </div>
+      <div className='info-item__name'>
+        {props.college}
+      </div>
     </div>
   )
 }

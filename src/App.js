@@ -10,12 +10,14 @@ function App() {
     {
       id: 'e1',
       Name: 'Karan',
-      Age: 22
+      Age: 22,
+      College: 'KSR'
     },
     {
       id: 'e2',
       Name: 'Arun',
-      Age: 25
+      Age: 25,
+      College: 'PSG'
     }
 
   ]

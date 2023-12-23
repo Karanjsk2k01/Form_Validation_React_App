@@ -6,7 +6,7 @@ const Info = (props) => {
   return (
     <div className='info'>
       {props.data.map((info) => (
-        <InfoList key={info.id} name={info.Name} age={info.Age} />
+        <InfoList key={info.id} name={info.Name} age={info.Age} college={info.College} />
       ))}
     </div>
   );
