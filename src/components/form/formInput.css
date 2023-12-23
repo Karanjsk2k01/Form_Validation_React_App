@@ -1,0 +1,48 @@
+.form__controls {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+
+}
+
+.form__actions {
+  padding: 1rem 0rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form__control input {
+  font: inherit;
+  width: 18rem;
+  padding: 0.5rem;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  max-width: 100%;
+  margin-bottom: 10px;
+}
+
+.form__actions button {
+  font: inherit;
+  background-color: blueviolet;
+  border-radius: 10px;
+  padding: 15px 25px;
+  border: none;
+  color: white;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.backdrop {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.75);
+}

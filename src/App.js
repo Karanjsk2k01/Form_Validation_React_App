@@ -1,25 +1,41 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import Info from './components/InfoList/Info';
+import Form from './components/form/form';
+
 
 function App() {
+
+  const DummyData = [
+    {
+      id: 'e1',
+      Name: 'Karan',
+      Age: 22
+    },
+    {
+      id: 'e2',
+      Name: 'Arun',
+      Age: 25
+    }
+
+  ]
+
+  const [formData, setFormData] = useState(DummyData)
+
+
+  const OnfinalDataValue = (infoData) => {
+    setFormData((prev) => {
+      return [...prev, infoData]
+    })
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Form OnfinalDataValue={OnfinalDataValue} />
+      <Info data={formData} />
     </div>
-  );
+
+  )
 }
 
 export default App;
