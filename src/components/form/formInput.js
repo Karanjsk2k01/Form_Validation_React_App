@@ -62,9 +62,9 @@ const FormInput = (props) => {
 
     props.onSumbitData(formData);
 
-    textValue.current.value = '';
-    numberValue.current.value = '';
-    collegeValidation.current.value = '';
+    textValue.current.value = ''
+    numberValue.current.value = ''
+    collegeValue.current.value = ''
   };
 
   const closeErrorPopup = () => {
