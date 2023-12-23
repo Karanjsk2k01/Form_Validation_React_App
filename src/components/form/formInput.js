@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './formInput.css';
 import Popup from '../UI/popup';
+import { ReactPortal } from 'react-dom';
 
 const FormInput = (props) => {
   const [textValue, setTextValue] = useState('');
@@ -66,7 +67,7 @@ const FormInput = (props) => {
     <div>
       {isErrorPopupVisible && (
         <div className='backdrop' onClick={closeErrorPopup}>
-          <Popup title={isErrorPopupVisible.title} message={isErrorPopupVisible.message} />
+          ReactDOM.createPortal(<Popup title={isErrorPopupVisible.title} message={isErrorPopupVisible.message} />,document.getElementById('overlay'));
         </div>
       )}
 

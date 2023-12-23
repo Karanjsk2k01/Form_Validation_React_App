@@ -1,7 +1,9 @@
 import React from 'react'
+import { ReactPortal } from 'react'
 import './popup.css'
 const Popup = (props) => {
-  return (
+
+  const overlay = (props) => {
     <div className='modal'>
       <header className='header'>
         <h2>{props.title}</h2>
@@ -15,6 +17,11 @@ const Popup = (props) => {
         </button>
       </footer>
     </div>
+  }
+
+
+  return (
+    ReactDOM.createPortal(<overlay title={props.title} message={props.message} />)
   )
 }
 
